@@ -1,0 +1,8 @@
+.feature-box {
+  width: calc((100%- #{$gutter-horizontal}) / 4);
+  background-color: rgb(163, 165, 160);
+  float: left;
+  &:not(:last-child) {
+    margin-right: $gutter-horizontal;
+  }
+}

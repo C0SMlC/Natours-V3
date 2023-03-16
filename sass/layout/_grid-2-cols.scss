@@ -1,0 +1,35 @@
+.grid-2-cols {
+  max-width: $grid-width;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.8;
+
+  @include clearfix;
+
+  & p {
+    display: inline-block;
+    color: $light-grey;
+  }
+}
+
+.section-about-grid {
+  float: left;
+  width: calc((100% - #{$gutter-horizontal}) / 2);
+
+  @include respond(tabLand) {
+    width: 100% !important;
+    padding: 2rem;
+    margin-bottom: 6rem;
+  }
+
+  &:last-child {
+    @include respond(tabLand) {
+      margin-bottom: 30rem;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: $gutter-horizontal;
+  }
+}

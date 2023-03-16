@@ -1,0 +1,57 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(#55c57ab7, #28b485bc),
+    url("../img/hero-small.jpg");
+  background-size: cover;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+  //higher than 192dpi and
+  // width higer than 600px
+
+  // the comma denotes or
+  @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
+    background-image: linear-gradient(#7f7f7fb7, #000000bc),
+      url("../img/hero.jpg");
+  }
+
+  // @media (min-width: 2000px) {
+  //   background-image: linear-gradient(#3db05295, #000000bc),
+  //     url("../img/hero.jpg");
+  // }
+
+  &__main-logo {
+    height: 3.2rem;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  &__main-logo:hover {
+    transform: scale(1.2);
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+  }
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+  }
+}
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header__text-box h1 {
+  color: $lightest_grey;
+  line-height: 1.8;
+  backface-visibility: hidden;
+  margin-bottom: 9.2rem;
+}
